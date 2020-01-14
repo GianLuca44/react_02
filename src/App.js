@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import uuid from 'uuid';
 import axios from 'axios';
 
 import {Button, FormControl, Form, Nav, Navbar} from 'react-bootstrap'
@@ -11,9 +10,7 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import '@fortawesome/fontawesome-free'
 
 import './App.css';
-import SideNavComp from "./components/SideNavComp";
-import NavComp from "./components/NavComp";
-import NavComp_02 from "./components/NavComp_02";
+
 import Alert from "react-bootstrap/Alert";
 import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
@@ -40,41 +37,7 @@ class App extends Component {
 			.then((res) => this.setState({ todos: res.data }));
 	}
 
-	// Toggle Complete
-	markComplete = (id) => {
-		this.setState({
-			todos: this.state.todos.map((todo) => {
-				if (todo.id === id) {
-					todo.completed = !todo.completed;
-				}
-				return todo;
-			})
-		});
-	};
 
-	// Delete Todo
-	delTodo = (id) => {
-		axios
-			.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-			.then((res) =>
-				this.setState({
-					todos: [...this.state.todos.filter((todo) => todo.id !== id)]
-				})
-			);
-	};
-
-	// Add Todo
-	addTodo = (title) => {
-		axios
-			.post('https://jsonplaceholder.typicode.com/todos', {
-				title,
-				completed: false
-			})
-			.then((res) => {
-				res.data.id = uuid.v4();
-				this.setState({ todos: [...this.state.todos, res.data] });
-			});
-	};
 
 	render() {
 
