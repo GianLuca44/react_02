@@ -15,6 +15,7 @@ import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import SideNavigationBar from "./SideNavigationBar";
 import SideNavigationBar_02 from "./SideNavigationBar_02";
+import PortalView from "./PortalView";
 
 export class BodyLayout extends Component {
 
@@ -45,7 +46,7 @@ export class BodyLayout extends Component {
                 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
                     <Tab eventKey="home" title="Home">
                         <Container>
-                            <Row  style={{backgroundColor: "orange"}}>
+                            <Row  style={mystyle}>
                                 <Col xs={6} md={4}>
                                     <Image src={home} rounded />
                                 </Col>
@@ -62,7 +63,7 @@ export class BodyLayout extends Component {
                         </Container>
                     </Tab>
                     <Tab eventKey="profile" title="Profile" style={{backgroundColor: "orange"}}>
-                        <Image src="holder.js/100px250" fluid />
+                        <PortalView />
                     </Tab>
                     <Tab eventKey="contact" title="Contact">
 
