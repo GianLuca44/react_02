@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import Logo1 from '../img/cloud.png'
 import Logo2 from '../img/copy.png'
-
+import home from '../img/home.png'
+import scissor from '../img/scissor.png'
+import synchronize from '../img/synchronize.png'
 
 
 import {Button, Form, FormControl, Navbar, Nav} from "react-bootstrap";
@@ -11,6 +13,8 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+import SideNavigationBar from "./SideNavigationBar";
+import SideNavigationBar_02 from "./SideNavigationBar_02";
 
 export class BodyLayout extends Component {
 
@@ -33,22 +37,26 @@ export class BodyLayout extends Component {
     return (
     <div>
         <Row>
-            <Col>
+            <Col xs="2" lg="2" style={{backgroundColor: '#ffaa50'} }>
+                <SideNavigationBar_02 />
 
             </Col>
             <Col>
                 <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
                     <Tab eventKey="home" title="Home">
                         <Container>
-                            <Row style={{backgroundColor: "orange"} }>
+                            <Row  style={{backgroundColor: "orange"}}>
                                 <Col xs={6} md={4}>
-                                    <Image src={Logo1} rounded />
+                                    <Image src={home} rounded />
                                 </Col>
                                 <Col xs={6} md={4}>
-                                    <Image src={Logo2} roundedCircle />
+                                    <Image src={scissor} rounded />
                                 </Col>
                                 <Col xs={6} md={4}>
-                                    <Image src="holder.js/171x180" thumbnail />
+                                    <Image src={synchronize} rounded />
+                                </Col>
+                                <Col xs={6} md={4}>
+                                    <Image src={synchronize} rounded />
                                 </Col>
                             </Row>
                         </Container>
